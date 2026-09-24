@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+
+<!-- VBox is the root pane of the FXML file, contains all other elements, is a vertical box layout -->
+<VBox alignment="TOP_LEFT" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.addressbook.controller.HelloController">
+    <!-- alignment of the elements within the box. CENTER means elements are centered -->
+    <!-- xmlns:fx - a namespace decleration for the fx prefix, which is used to reference JAVAFX-specific-attributes and elements, unlikely to change -->
+    <!-- fx:controller is the controller class for FXML files, set to com.example.addressbook.controller.HelloController
+    that is the controller class for the hello-view.fxml file-->
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <!-- padding element adds padding to the VBox element, adds a 20-pixel gap around the edges of the box-->
+    </padding>
+
+    <Label text = "Welcome to the Address Book Application.
+        You must agree to the following terms and conditions before you can use the application."
+           wrapText = "true"/>
+    <!-- Label element now has a text attribute, used to specify the welecome message" -->
+    <!-- wrapText set to true will wrap the text to the next line if it is too long -->
+    <!-- Since we want this to be a fixed message we don't need to specify an fx:id attribute -->
+    <TextArea fx:id = "termsAndConditions"
+              wrapText = "true"
+              editable = "false"
+              />
+    <!-- TextArea displays terms and conditions. fx:id allows us to reference it later, text attribute specifys next to checkbox-->
+    <!-- editable = "false" prevents user from editing -->
+    <CheckBox fx:id = "agreeCheckBox"
+              text = "I agree to the terms and conditions."
+              onAction = "#onAgreeCheckBoxClick"/>
+
+    <!-- text attribute specifys the text next to check box -->
+    <!-- new HBox element added to contain buttons (otherwise they would be stacked on top of each other) -->
+    <HBox alignment = "BOTTOM_RIGHT" spacing = "10.0">
+            <Button text = "Cancel" onAction="#onCancelButtonClick"/>
+            <Button fx:id = "nextButton" text="Next" onAction = "#onNextButtonClick" disable = "true" />
+    </HBox>
+    <!-- Buttons simply contain Cancel and Next (disabled by default, user must agree to terms and conditions first) -->
+    <Label fx:id = "welcomeText"/>
+    <!-- <Label fx:id="welcomeText"/> -->
+    <!-- a label that displays a welcome message, fx:id attribute is used to reference label in controller class -->
+    <!-- Button - a button that displays a Hello! message, has an onAction attribute used to specify the action to perform when clicked-->
+    <!-- Button is bound to the onHelloButtonClick method in the HelloController class -->
+</VBox>
