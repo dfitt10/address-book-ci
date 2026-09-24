@@ -7,7 +7,8 @@ public class SqliteConnection {
     private static Connection instance = null;
 
     private SqliteConnection() {
-        String url = "jdbc:sqlite:C:/Users/danzo/IdeaProjects/address-book/contacts.db";
+        //String url = "jdbc:sqlite:C:/Users/danzo/IdeaProjects/address-book/contacts.db";
+        String url = "jdbc:sqlite:addressbook.db";
         try {
             // Force the JVM to locate and register the implicit SQLite driver
             Class.forName("org.sqlite.JDBC");
