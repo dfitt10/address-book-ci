@@ -26,15 +26,14 @@
             <version>21.0.6</version>
         </dependency>
 
+        <!-- CLEANED: Removed system scope and local path. Pulls directly from Central -->
         <dependency>
-            <groupId>org.sqlite</groupId>
+            <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
-            <version>3.36.0.3</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/sqlite-jdbc-3.36.0.3.jar</systemPath>
+            <version>3.46.0.0</version>
         </dependency>
 
-        <!-- Fixed and consolidated JUnit 5 dependencies using the property variable -->
+        <!-- CLEANED: Kept just one API block for test execution engine boundaries -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -47,15 +46,8 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>compile</scope>
-        </dependency>
-
     </dependencies>
+
 
     <build>
         <plugins>

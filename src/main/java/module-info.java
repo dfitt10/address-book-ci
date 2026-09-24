@@ -2,7 +2,7 @@ module com.example.addressbook {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
-    requires static org.junit.jupiter.api;
+    //requires static org.junit.jupiter.api;
 
 
     opens com.example.addressbook to javafx.fxml;
